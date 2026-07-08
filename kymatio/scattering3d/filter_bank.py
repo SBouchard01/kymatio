@@ -164,7 +164,7 @@ def solid_harmonic_3d(M, N, O, sigma, l, fourier=True):
     polar, azimuthal = get_3d_angles(grid)
 
     for i_m, m in enumerate(range(-l, l + 1)):
-        solid_harm[i_m] = sph_harm_y(m, l, polar, azimuthal) * polynomial_gaussian
+        solid_harm[i_m] = sph_harm_y(l, m, polar, azimuthal) * polynomial_gaussian
 
     if l % 2 == 0:
         norm_factor = 1. / (2 * np.pi * np.sqrt(l + 0.5) * 
